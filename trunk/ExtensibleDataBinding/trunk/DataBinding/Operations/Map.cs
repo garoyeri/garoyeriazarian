@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DataBinding.Extensions;
 
 namespace DataBinding.Operations
 {
@@ -21,11 +22,18 @@ namespace DataBinding.Operations
 		void Bind()
 		{
 			_source.ValueChanged += new EventHandler(Source_ValueChanged);
+			_sink.Value = _source.Value;
 		}
 
 		void Source_ValueChanged(object sender, EventArgs e)
 		{
 			_sink.Value = _source.Value;
+		}
+
+
+		public static MapSourceClause<T> From(Source<T> source)
+		{
+			return new MapSourceClause<T>(source);
 		}
 	}
 }

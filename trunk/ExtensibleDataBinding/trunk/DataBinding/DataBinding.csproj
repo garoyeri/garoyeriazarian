@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ConvertSinkClause.cs" />
+    <Compile Include="Extensions\ConvertSourceClause.cs" />
+    <Compile Include="Extensions\MapSourceClause.cs" />
     <Compile Include="Junctions\Junction.cs" />
     <Compile Include="Junctions\PropertySink.cs" />
     <Compile Include="Junctions\PropertySource.cs" />
