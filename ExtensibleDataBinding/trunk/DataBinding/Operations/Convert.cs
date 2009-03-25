@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DataBinding.Extensions;
 
 namespace DataBinding.Operations
 {
@@ -28,6 +29,11 @@ namespace DataBinding.Operations
 		void Source_ValueChanged(object sender, EventArgs e)
 		{
 			_sink.Value = _converter(_source.Value);
+		}
+
+		public static ConvertSourceClause<TFrom, TTo> From(Source<TFrom> source)
+		{
+			return new ConvertSourceClause<TFrom, TTo>(source);
 		}
 	}
 }

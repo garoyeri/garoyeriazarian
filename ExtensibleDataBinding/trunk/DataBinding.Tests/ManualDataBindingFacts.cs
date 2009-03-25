@@ -25,6 +25,21 @@ namespace DataBinding.Tests
 			Assert.Equal("Three", obj2.Name);
 		}
 
+		[Fact]
+		public void can_set_up_simple_property_binding_fluently()
+		{
+			var obj1 = new Sample1 { Name = "One" };
+			var obj2 = new Sample1 { Name = "Two" };
+
+			Map<string>
+				.From(new PropertySource<string>(obj1, "Name"))
+				.To(new PropertySink<string>(obj2, "Name"));
+
+			obj1.Name = "Three";
+
+			Assert.Equal("Three", obj2.Name);
+		}
+
 
 		[Fact]
 		public void can_chain_operations_with_junction()

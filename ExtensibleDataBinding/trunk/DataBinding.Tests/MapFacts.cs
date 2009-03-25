@@ -22,6 +22,22 @@ namespace DataBinding.Tests
 
 			Assert.Equal("Two", sink.Value);
 		}
+
+		[Fact]
+		public void can_map_simple_values_fluently()
+		{
+			var source = new InjectedSource<string>();
+			var sink = new InjectedSink<string>();
+			source.Value = "One";
+
+			Map<string>
+				.From(source)
+				.To(sink);
+
+			source.Value = "Two";
+
+			Assert.Equal("Two", sink.Value);
+		}
 	}
 
 	class InjectedSource<T> : Source<T>
