@@ -6,13 +6,13 @@ using DataBinding.Extensions;
 
 namespace DataBinding.Operations
 {
-	public class Convert<TFrom, TTo>
+	public class Transform<TFrom, TTo>
 	{
 		Source<TFrom> _source;
 		Sink<TTo> _sink;
 		Converter<TFrom, TTo> _converter;
 
-		public Convert(Source<TFrom> source, Sink<TTo> sink, Converter<TFrom, TTo> converter)
+		public Transform(Source<TFrom> source, Sink<TTo> sink, Converter<TFrom, TTo> converter)
 		{
 			_source = source;
 			_sink = sink;
@@ -31,9 +31,9 @@ namespace DataBinding.Operations
 			_sink.Value = _converter(_source.Value);
 		}
 
-		public static ConvertSourceClause<TFrom, TTo> From(Source<TFrom> source)
+		public static TransformSourceClause<TFrom, TTo> From(Source<TFrom> source)
 		{
-			return new ConvertSourceClause<TFrom, TTo>(source);
+			return new TransformSourceClause<TFrom, TTo>(source);
 		}
 	}
 }

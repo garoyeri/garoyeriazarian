@@ -8,7 +8,7 @@ using DataBinding.Operations;
 
 namespace DataBinding.Tests
 {
-	public class ConvertFacts
+	public class TransformFacts
 	{
 		[Fact]
 		public void can_convert_from_int_to_string()
@@ -16,7 +16,7 @@ namespace DataBinding.Tests
 			var source = new InjectedSource<int>();
 			source.Value = 0;
 			var sink = new InjectedSink<string>();
-			var convert = new Convert<int, string>(
+			var convert = new Transform<int, string>(
 				source, sink, i => i.ToString());
 
 			source.Value = 5;
@@ -31,7 +31,7 @@ namespace DataBinding.Tests
 			source.Value = 0;
 			var sink = new InjectedSink<string>();
 
-			Convert<int, string>
+			Transform<int, string>
 				.From(source)
 				.To(sink)
 				.Using(i => i.ToString());

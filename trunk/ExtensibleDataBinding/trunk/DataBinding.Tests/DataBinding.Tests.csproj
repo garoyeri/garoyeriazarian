@@ -49,7 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConvertFacts.cs" />
+    <Compile Include="TransformFacts.cs" />
     <Compile Include="ManualDataBindingFacts.cs" />
     <Compile Include="MapFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
