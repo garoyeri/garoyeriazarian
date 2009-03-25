@@ -50,8 +50,8 @@ namespace DataBinding.Tests
 			var sink = new PropertySink<string>(obj2, "Name");
 			var junc1 = new Junction<int>();
 			var junc2 = new Junction<string>();
-			var convert1 = new Convert<string, int>(src, junc1, s => int.Parse(s));
-			var convert2 = new Convert<int, string>(junc1, junc2, i => i.ToString());
+			var convert1 = new Transform<string, int>(src, junc1, s => int.Parse(s));
+			var convert2 = new Transform<int, string>(junc1, junc2, i => i.ToString());
 			var map = new Map<string>(junc2, sink);
 
 			obj1.Name = "2";

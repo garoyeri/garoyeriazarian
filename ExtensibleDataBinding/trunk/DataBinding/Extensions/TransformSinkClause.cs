@@ -7,20 +7,20 @@ using DataBinding.Operations;
 
 namespace DataBinding.Extensions
 {
-	public class ConvertSinkClause<TSource, TSink>
+	public class TransformSinkClause<TSource, TSink>
 	{
 		Source<TSource> _source;
 		Sink<TSink> _sink;
 
-		public ConvertSinkClause(Source<TSource> source, Sink<TSink> sink)
+		public TransformSinkClause(Source<TSource> source, Sink<TSink> sink)
 		{
 			_source = source;
 			_sink = sink;
 		}
 
-		public Convert<TSource, TSink> Using(Converter<TSource, TSink> converter)
+		public Transform<TSource, TSink> Using(Converter<TSource, TSink> converter)
 		{
-			return new Convert<TSource, TSink>(_source, _sink, converter);
+			return new Transform<TSource, TSink>(_source, _sink, converter);
 		}
 	}
 }
