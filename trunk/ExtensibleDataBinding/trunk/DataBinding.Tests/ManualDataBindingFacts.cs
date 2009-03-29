@@ -6,6 +6,7 @@ using System.Text;
 using Xunit;
 using DataBinding.Junctions;
 using DataBinding.Operations;
+using DataBinding.Extensions;
 
 namespace DataBinding.Tests
 {
@@ -57,6 +58,22 @@ namespace DataBinding.Tests
 			obj1.Name = "2";
 
 			Assert.Equal("2", obj2.Name);
+		}
+
+
+		[Fact]
+		public void can_chain_operations_fluently()
+		{
+			var source = new InjectedSource<string> { Value = "1" };
+			var sink = new InjectedSink<int>();
+
+			source
+				.Transform<string, int>(s => int.Parse(s)).Then()
+				.Transform<int, int>(i => i * 2).Then()
+				.Map<int>().To(sink);
+			source.Value = "4";
+
+			Assert.Equal(8, sink.Value);
 		}
 	}
 }

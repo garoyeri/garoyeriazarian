@@ -45,9 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ChainExtension.cs" />
+    <Compile Include="Extensions\MapExtension.cs" />
+    <Compile Include="Extensions\SinkClause.cs" />
+    <Compile Include="Extensions\SinkExtension.cs" />
+    <Compile Include="Extensions\TransformExtension.cs" />
     <Compile Include="Extensions\TransformSinkClause.cs" />
     <Compile Include="Extensions\TransformSourceClause.cs" />
     <Compile Include="Extensions\MapSourceClause.cs" />
+    <Compile Include="Junctions\Chain.cs" />
     <Compile Include="Junctions\Junction.cs" />
     <Compile Include="Junctions\PropertySink.cs" />
     <Compile Include="Junctions\PropertySource.cs" />

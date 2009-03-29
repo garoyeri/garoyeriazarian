@@ -24,6 +24,7 @@ namespace DataBinding.Operations
 		void Bind()
 		{
 			_source.ValueChanged += new EventHandler(Source_ValueChanged);
+			_sink.Value = _converter(_source.Value);
 		}
 
 		void Source_ValueChanged(object sender, EventArgs e)
