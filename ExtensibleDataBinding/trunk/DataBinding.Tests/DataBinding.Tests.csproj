@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JunctionFacts.cs" />
     <Compile Include="TransformFacts.cs" />
     <Compile Include="ManualDataBindingFacts.cs" />
     <Compile Include="MapFacts.cs" />
