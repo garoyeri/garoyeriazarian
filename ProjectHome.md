@@ -1,0 +1,1 @@
+This project is for hosting my code examples and public projects that I work on in conjunction with my blog at http://garoyeri.blogspot.com
